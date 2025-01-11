@@ -6,6 +6,10 @@
     <meta name="keywords" content="Kritik Paudel, Web Developer, Cybersecurity, Portfolio">
     <meta name="author" content="Kritik Paudel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Kritik Paudel Portfolio">
+    <meta property="og:description" content="Web Developer and Cybersecurity Enthusiast Portfolio">
+    <meta property="og:image" content="path/to/image.jpg">
+    <meta property="og:url" content="https://www.kritikpaudel.com.np/">
     <title>Kritik Paudel | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -13,10 +17,13 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            overflow: hidden; /* Disable scrolling for the first page */
+ 
             height: 100vh;
             display: flex;
             flex-direction: column;
+        }
+        html {
+            scroll-behavior: smooth;
         }
 
 
@@ -181,6 +188,33 @@
 
         .social-icons a:hover {
             color: #00ff85;
+        }
+
+        /* For screens narrower than 768px */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-section {
+                padding: 10px;
+            }
+
+            .social-icons a {
+                font-size: 20px;
+            }
+        }
+
+        /* For screens narrower than 480px */
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 5px;
+            }
+
+            .social-icons a {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
