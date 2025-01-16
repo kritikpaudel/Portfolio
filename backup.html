@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Kritik Paudel's portfolio - Web Developer and Cybersecurity Enthusiast.">
+    <meta name="keywords" content="Kritik Paudel, Web Developer, Cybersecurity, Portfolio">
+    <meta name="author" content="Kritik Paudel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Kritik Paudel Portfolio">
+    <meta property="og:description" content="Web Developer and Cybersecurity Enthusiast Portfolio">
+    <meta property="og:image" content="path/to/image.jpg">
+    <meta property="og:url" content="https://www.kritikpaudel.com.np/">
+    <title>Kritik Paudel | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+ 
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /* Animations */
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            color: #00adb5;
+        }
+        .menu-toggle {
+            
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            background: white;
+            height: 3px;
+            margin: 4px 0;
+            width: 25px;
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 2rem;
+            background: #444;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        .mobile-menu li {
+            
+            text-align: center;
+            list-style: none;
+            padding: 0.5rem 1rem;
+        }
+        .mobile-menu li a {
+            color: white;
+            display: block;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .mobile-menu li a:hover {
+            color: #00adb5;
+            transform: translateY(-5px);
+        }
+        .hero-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        .highlight {
+            color: #00adb5;
+        }
+        .container {
+            display: none;
+            
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+        }
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero-section {
+                text-align: left;
+                padding: 1rem;
+            }
+            }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00ff85;
+        }
+
+        /* For screens narrower than 768px */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-section {
+                padding: 10px;
+            }
+
+            .social-icons a {
+                font-size: 20px;
+            }
+        }
+
+        /* For screens narrower than 480px */
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 5px;
+            }
+
+            .social-icons a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>    
+    <header class="navbar">
+        <h1 class="logo">Kritik Paudel</h1>
+        <ul class="nav-links">
+            <li><a href="#about" onclick="navigateTo('about')">About</a></li>
+            <li><a href="#projects" onclick="navigateTo('projects')">Projects</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="mobile-menu">
+            <li><a href="#about" onclick="navigateTo('about')">About</a></li>
+            <li><a href="#projects" onclick="navigateTo('projects')">Projects</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInLeft">Hi, I'm <span class="highlight">Kritik Paudel</span></h1>
+            <p class="animate__animated animate__fadeInRight">A passionate <span class="highlight">Web Developer</span> and <span class="highlight">Cybersecurity Enthusiast</span></p>
+            <div class="social-icons animate__animated animate__fadeInUp">
+                
+                <a href="https://www.discord.com/users/515975346210996225"><i class="fab fa-discord"></i></a>
+                <a href="https://www.instagram.com/kritik_paudel/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kritik-paudel/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hello! I am Kritik Paudel, a web developer with a flair for creating elegant solutions. I specialize in building responsive, user-friendly websites and applications.</p>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>Description of the project...</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>Description of the project...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me for any collaboration or opportunities!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kritik Paudel. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        
+
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function navigateTo(sectionId) {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(section => section.style.display = 'none');
+
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.style.display = 'block';
+                document.body.style.overflow = 'auto'; // Enable scrolling when leaving home
+
+                // Add Home button dynamically if visiting other sections
+                const navLinks = document.querySelector('.nav-links');
+                const homeLink = document.getElementById('home-link');
+                if (!homeLink) {
+                    const li = document.createElement('li');
+                    li.id = 'home-link';
+                    li.innerHTML = '<a href="#" onclick="navigateHome()">Home</a>';
+                    navLinks.appendChild(li);
+                }
+            }
+
+            // Show hero-section alongside other content
+            document.querySelector('.hero-section').style.display = 'block';
+        }
+
+        function navigateHome() {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(section => section.style.display = 'none');
+
+            const homeLink = document.getElementById('home-link');
+            if (homeLink) homeLink.remove(); // Remove Home link
+
+            document.body.style.overflow = 'hidden'; // Disable scrolling for home
+
+            // Ensure hero-section is visible
+            document.querySelector('.hero-section').style.display = 'flex';
+        }
+
+        // Ensure hero-section remains visible initially
+        document.querySelector('.hero-section').style.display = 'flex';
+    </script>
+</body>
+</html>

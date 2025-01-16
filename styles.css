@@ -1,0 +1,113 @@
+/* General Reset */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar-nav {
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #50C878;
+}
+
+/* Hero Section */
+section {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #50C878;
+}
+
+section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+section .lead {
+    font-size: 1.25rem;
+}
+
+
+
+/* Footer Styling */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 10px;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+footer ul li a {
+    color: #50C878;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer ul li a:hover {
+    color: #fff;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2.5rem;
+    }
+
+    section .lead {
+        font-size: 1rem;
+    }
+
+    section a.btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    section h1 {
+        font-size: 2rem;
+    }
+
+    section .lead {
+        font-size: 0.9rem;
+    }
+}
+
+/* Utility Classes for Debugging (Optional, Remove for Production) */
+.debug {
+    outline: 1px solid red;
+}
